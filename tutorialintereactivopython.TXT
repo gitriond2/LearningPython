@@ -1,0 +1,212 @@
+print("a es mayor que b: " + str(c))
+
+c = a > b  # Modifica esta línea
+print("a es mayor que b: " + str(c))			forma de obtener si es verdadero o no
+
+1 if
+	2si entra en el if
+	3 ejecuta esto
+4 sino fuera del if sigue el programa
+
+		funciones
+def varFun():
+	codigo a hacer...
+#llamarlo
+varFun()
+#darle parametro
+saludar("Alex")  # Bienvenido, Alex
+#se le puede dar valores sin recibir parametros pero se modifica al recibirlos.
+def suma(a, b = 0, c = 0):
+    return suma * 2		puede retornar una operacion matematica
+# puede realizar una operacion
+def sumar():
+    2 + 2  # Realiza una operación pero no devuelve nada
+
+# para saber si es multiplo de 2 es par
+aux = numero % 2
+
+# return puede devolver strings con un valor
+return 'Estás equivocado, el número secreto no es ' + str(numero)
+
+# forma de convertir un string en minuscula
+   llaves = llaves.lower()
+
+#se respeta el True  o False 
+val = True or False	
+if val:			si es true va a entrar sino no
+
+# compuerta not invierte el valor la cantidad de veces que se repita 
+print(not not not not a) 
+return not llevarLaContraria
+
+# IF ternario
+print("Código correcto") if codigo == '1234' else print("Código incorrecto")
+mensaje = "Eres mayor de edad" if edad >= 18 else "Eres menor de edad"
+
+mensaje = "Código correcto" if codigo == "1234" else "Código incorrecto"
+print(mensaje)
+
+# interpolacion de f-string
+print(f"Hola, me llamo {nombre} y tengo {edad} años.")		agrega valores al string
+print(f"La suma de {x} y {y} es {x + y}.")			agrega valores y hace operaciones
+print(f"El total de tu compra es ${total:.2f}")			agrega operaciones .flotantes 		la .2f  es la cantidad de numeros decimales
+print(f"El número es {numero}", end=' ')			agrega valores y concatena con espacio y une los resultados
+return f"{texto1}{texto2}"
+
+# mayusculass minusculas
+var.upper()	mayusculas
+var.lower()	minusculas
+
+#espacios en blanco al inicio y al final de un texto utilizando el método strip().
+print(texto.strip())
+
+#se puede hacer varias funciones pero tenes que hacerlo asi
+texto2 = texto2.strip().upper()
+texto[0:5].upper()
+
+#para obtener la longitud de la cadena
+len(var2)
+
+# Slicing nos devolverá los caracteres desde el índice 0 hasta el 4, sin incluir el 4
+texto[0:4]
+
+#  nos devolverá los caracteres desde el índice 0 hasta el 4, saltando de 2 en 2
+ texto[0:4:2]
+
+# lista, utilizamos corchetes [] y separamos los elementos con comas ,
+nombres = ["Juan", "Pedro", "Ana", "Luis"]
+numeros = [1, 2, 3, 4, 5]
+nombres[0]	#te trae Juan
+nombres[1:3]	#te trae Pedro Ana
+
+# Otra forma de acceder al último elemento
+nombres[len(nombres) - 1]	or 		nombres[-1]
+
+# añadir un nuevo elemento a una lista
+var.append("Maria")			no necesita guardarlo en la variable lo agrega directamente
+
+#pop() sin argumentos elimina y devuelve el último elemento de la lista. pop(index) elimina y devuelve el elemento en la posición especificada por index
+var2 = var.pop(index)	 se puede guardar el eliminado , llamando la lista normalmente esta eliminado , llamas a var si mostras la lista con el eliminado
+
+#el operador in nos permite verificar fácilmente si un elemento está presente en una lista.
+elemento in lista		elemento es donde se busca	lista es el parametro de busqueda
+
+# Para combinar listas en Python "+"	o	extend()
+lista3 = lista1 + lista			nueva_lista = lista1[1:] + lista2[1:]
+arr3 = arr1 + [valor] + arr2		para meter valores en listas
+
+# usando bucle while
+while var <=  num:
+
+if num1 % cont == 0 and num2 % cont == 0:		se puede hacer operaciones con el if
+
+# usando bucle for
+for fila_actual in range(1, filas + 1):
+
+for i in range(len(values)):
+    print(i, values[i])
+for i, value in enumerate(values):
+  print(i, value)
+
+#
+
+
+
+
+
+
+
+
+
+
+
+--------	
+print(a - b) 			se puede printear calculos
+
+# guarda funciones en variables
+r2  = varFun(var1,var2)
+print("El agua hierve a " + str(r2) + " grados Fahrenheit")
+
+#forma de llamar funciones dentro del print
+print(marcoPolo(val1))
+
+
+
+
+
+
+------------------- resuelto if anidado
+def revisarAntesDeSalir(llaves, celular):
+    mensaje = []
+    
+    if llaves == 'No':
+        mensaje.append("Te falta las llaves")
+    
+    # Este if está anidado dentro del primero, así solo se ejecutará si llaves es 'Si'
+    if llaves == 'Si':
+        if celular == 'No':
+            mensaje.append("Te falta el celular")
+    
+    if not mensaje:  # Si no hay mensajes, significa que todo está bien
+        return "Todo listo, puedes salir de casa"
+    
+    return '. '.join(mensaje)  # Une los mensajes con un punto y espacio
+------------------------------------
+
+
+--------------------------------------problema de estrella
+def patron_estrellas(filas):
+    fila_actual = 1
+    #print()
+    #print(f"patron_piramide({filas})")
+    while fila_actual <= filas:
+        columnas = 1
+        string = ''
+        while columnas <= fila_actual:
+            string = string + '*'
+            columnas += 1
+        print(string)
+        fila_actual += 1
+---------------------------------------- fin
+
+
+------------------------------------ recorrido de una matriz
+def dibujar_tabla(n):
+    numero = 1
+    for fila in range(n):
+        for columna in range(n):
+            print(f"{numero:2}", end=" ")
+            numero += 1
+        print()  # Salto de línea al final de cada fila
+------------------------------------------fin
+
+------------------------------------- mostrar una lista
+def mostrar_dato_e_indice(datos):
+    i = 0
+    while i < len(datos):
+        print(f"El valor en la posición {i} es {datos[i]}")
+        i += 1
+--------------------------------------fin
+
+-------------------------------------problema ordenar lista
+def primeros_x(lista, x):
+    n_lista=lista[:x]
+    return sorted(n_lista)
+---------------------------------- sin solucion todavia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

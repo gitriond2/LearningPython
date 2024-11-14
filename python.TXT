@@ -1,0 +1,69 @@
+no se declaran las variables ya las asigna de forma automatica python
+print(type(x), type(y), type(z))	permite ver que tipo de variable son
+se declara como en base de datos "" para string y sin para dato
+arrays
+var = list(range(0,11,2)) 	recorre de la pos hasta la final con el range, list lista cada uno de ellos
+			el 3ro da el salto de dato
+print(sum([manzanas, naranjas, peras]));	 puede sumar todos los array dentro
+len	 cuenta cuantos array hay
+var.count(10.0)		trae los que sean 10 aunque sean mas array, un filtro especifico
+var.lower()		devuelve toda la cadena en minuscula
+var.values() 		devuelve solo los tipo int y float
+var.keys()		devuelve solo loss tipo string ""
+
+var =(1,2,3)		tupla no se le puede añadir mas valores o modificarlos/eliminarlos
+var= [1,2,3]		lista se le puede """""" o modificarlos/eliminarlos
+var.append(4)		este es el metodo para agregarle []
+tupla= {'name':(1.1,1.2), 'name2':(1.3,1.4)}		asi es un array para tupla
+var.remove(valor)	elimina el valor dentro de la lista en array
+
+list(cool_string)		devuelve los valores por caracter separado  y tambien en modo lista
+tuple(cool_list)		devuelve los valores como tuplas sin modificarlos
+str.join("---", cool_list)	junta los caracteres de la variable str en un solo string
+
+function		no se abren llaves pero si se respeta el espaciado (sino no lo corre si estan fuera de linea)
+def  var(parm)		se define una func
+
+logical opratos		or/and
+if/elif/else
+input("ingresa valor:")			entrada de valor string y int
+print(funcion(val_input))		entrada con funcion y mostrar
+float/int(input("ingresa valor:"))	entrada convertida en flotante
+message = "hello %s!" % varString	copia y pega en la cadena al final
+message = "hello {varString}" 		igual anterior pero funciona con la version 3.6 de python
+message = "hello %s %s" %(var1,var2)	encadena 2 valores diferentes segun la posicion
+message = f"hello {name} {surname}. what´s up {when}"
+
+print(value.replace("+", "00"))	 		remmplazo de un valor  por otro
+
+	loops
+for var2 in var1:
+    print(round(var1))
+
+while var1 > var2:
+
+	listar
+var1.items()
+
+
+
+
+commmand
+
+var.clear() 		limpia el array elimina todos los datos
+var.index(valor)	devuelve la posicion de lo insertado
+var.index(valor, start) empieza del valor		revisar
+var.__getitem__(indice)	devuelve el valor en la posicion
+var[indice]		devuelve """""
+			puede meter por indice a un string o integer dentro de otro array
+var[val1:val2]		devuelve segun la posicion de val1 y hasta val2, no devuelve la ultima posicion val2(sin el val2 final devuelve hasta el ultimo)
+var[-var]		devuelve la posicion ultima del mas indice ultimo al principio		sucede lo mismo[-:] solo que da al reves
+var[val1][val2]		devuelve val1 la posicion de arrays en la var, el val2 devuelve el valor de array de la posicion	ejemplo hello 'l'
+var{"str":val/str}	diccionario el indice aca es el "str": que devuelve el val/str
+
+print(" ".join(var))	concatena con un espacion cada parte de array
+
+
+
+
+

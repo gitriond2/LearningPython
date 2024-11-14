@@ -1,0 +1,112 @@
+funcions
+
+def mean(value):
+	if type(value) == dict:
+		the_mean = sum(value.values{}) /len(value)			#resuelve problemas con diccionario
+	else:
+		the_mean = sum(value) / len(value)					#resuelve problemas normales sin string
+		
+		return the_mean
+monday_temperatures= [8.8, 9.1, 9.9]
+student_grades = {"Marry": 9.1,"sim": 8.8, "jhon":7.1}
+print(mean(monday_temperatures))
+
+
+
+def mean(value):
+	if isinstance(value,dict):								#no entendi bien pero despues veo
+		the_mean = sum(value.values{}) /len(value)			#resuelve problemas con diccionario
+	else:
+		the_mean = sum(value) / len(value)					#resuelve problemas normales sin string
+		
+		return the_mean
+monday_temperatures= [8.8, 9.1, 9.9]
+student_grades = {"Marry": 9.1,"sim": 8.8, "jhon":7.1}
+print(mean(monday_temperatures))
+
+
+Check if a value is of a particular type with isinstance:
+
+    isinstance("abc", str)
+    isinstance([1, 2, 3], list)
+
+or directly:
+
+    type("abc") == str
+    type([1, 2, 3]) == lst
+	
+	
+	string concatenate
+	
+	    name = "John"
+    surname = "Smith"
+     
+    message = "Your name is {}. Your surname is {}".format(name, surname)
+    print(message)
+	-------
+	name = "Sim"
+	experience_years = 1.5
+	print("Hi {}, you have {} years of experience".format(name, experience_years)
+	
+	bucles for
+	for letter in 'hello':
+	    print(letter.title())
+		
+	-------
+	for color in colors:
+    if isinstance(color, int) and color > 50:
+        print(color)
+		
+	--------
+	for key, value in phone_numbers.items():
+		print(f"{key} has as phone number {value}")				sirve para sacar los valores y string y organizarlo como queres
+		
+	--------
+	while username =! "name":
+		username = input("ingresa Nombre:")
+	--------
+	
+	while true:
+		username = input("ingresa nombre")
+		if username == 'name':
+			break
+		else:
+			continue
+	---------
+	
+	for key, value in phone_numbers.items():
+    print(key, value)
+	----------						sirve para revisar frases y agregarle si son de name inicial le agrega el ?
+	def sentencia_hacer(frase):
+		varExist = ("name","name2","name3")
+		acumu = frase.acumu
+		if frase.startwith(varExist):
+			return "{}?".format(acumu)
+		else:
+			return "{}.".format(acumu)
+	
+	-------------
+	
+	results = []
+	while true:
+		var1 = input("dice")
+		if var1 == "\terminar":
+			break
+		else:
+			results.append(funcion(var1))
+
+	---------------
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
