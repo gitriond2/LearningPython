@@ -1,0 +1,119 @@
+#Obtener las Ventas por Cliente
+ventas_por_cliente = query_db('''
+SELECT Clientes.NOMBRE, Clientes.APELLIDO, SUM(Ventas.IMPORTE) AS TotalGastado
+FROM Ventas
+JOIN Clientes ON Ventas.CLIENTE = Clientes.CLIENTE_ID
+GROUP BY Clientes.CLIENTE_ID
+ORDER BY TotalGastado DESC
+''')
+print(ventas_por_cliente)
+
+#Obtener la Venta Total por Producto
+ventas_por_producto = query_db('''
+SELECT Productos.NOMBRE, SUM(Ventas.CANTIDAD) AS TotalVendido, SUM(Ventas.IMPORTE) AS TotalGanado
+FROM Ventas
+JOIN Productos ON Ventas.PRODUCTO = Productos.PRODUCTO_ID
+GROUP BY Productos.PRODUCTO_ID
+ORDER BY TotalVendido DESC
+''')
+print(ventas_por_producto)
+
+#Obtener las Ventas por Mes
+ventas_por_mes = query_db('''
+SELECT strftime('%Y-%m', FECHA) AS Mes, SUM(IMPORTE) AS TotalVentas
+FROM Ventas
+GROUP BY strftime('%Y-%m', FECHA)
+ORDER BY Mes
+''')
+print(ventas_por_mes)
+
+#Actualizar Datos de un Cliente
+def actualizar_cliente(cliente_id, nuevo_nombre, nuevo_apellido, nueva_direccion, nueva_localidad):
+    conn = sqlite3.connect('indumentaria_intima.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+    UPDATE Clientes
+    SET NOMBRE = ?, APELLIDO = ?, DIRECCION = ?, LOCALIDAD = ?
+    WHERE CLIENTE_ID = ?
+    ''', (nuevo_nombre, nuevo_apellido, nueva_direccion, nueva_localidad, cliente_id))
+    conn.commit()
+    conn.close()
+
+# Ejemplo de uso
+actualizar_cliente(1, 'Carlos', 'Gómez', 'Nueva Calle 1', 'Madrid')
+
+#Eliminar un Producto
+def eliminar_producto(producto_id):
+    conn = sqlite3.connect('indumentaria_intima.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+    DELETE FROM Productos
+    WHERE PRODUCTO_ID = ?
+    ''', (producto_id,))
+    conn.commit()
+    conn.close()
+
+# Ejemplo de uso
+eliminar_producto(1)
+
+#Añadir una Nueva Venta
+def añadir_venta(id_venta, fecha, cliente_id, producto_id, cantidad, importe, tipo_pago):
+    conn = sqlite3.connect('indumentaria_intima.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+    INSERT INTO Ventas (ID_VENTA, FECHA, CLIENTE, PRODUCTO, CANTIDAD, IMPORTE, TIPODEPAGO)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+    ''', (id_venta, fecha, cliente_id, producto_id, cantidad, importe, tipo_pago))
+    conn.commit()
+    conn.close()
+
+# Ejemplo de uso
+añadir_venta(11, '2024-01-11', 3, 2, 1, 19.99, 'Tarjeta')
+
+
+#Manejo de Excepciones al Actualizar un Cliente
+def actualizar_cliente(cliente_id, nuevo_nombre, nuevo_apellido, nueva_direccion, nueva_localidad):
+    try:
+        conn = sqlite3.connect('indumentaria_intima.db')
+        cursor = conn.cursor()
+        cursor.execute('''
+        UPDATE Clientes
+        SET NOMBRE = ?, APELLIDO = ?, DIRECCION = ?, LOCALIDAD = ?
+        WHERE CLIENTE_ID = ?
+        ''', (nuevo_nombre, nuevo_apellido, nueva_direccion, nueva_localidad, cliente_id))
+        conn.commit()
+    except sqlite3.Error as e:
+        print(f"Error al actualizar el cliente: {e}")
+    finally:
+        conn.close()
+
+# Ejemplo de uso
+actualizar_cliente(1, 'Carlos', 'Gómez', 'Nueva Calle 1', 'Madrid')
+
+
+#Manejo de Excepciones al Eliminar un Producto
+def eliminar_producto(producto_id):
+    try:
+        conn = sqlite3.connect('indumentaria_intima.db')
+        cursor = conn.cursor()
+        cursor.execute('''
+        DELETE FROM Productos
+        WHERE PRODUCTO_ID = ?
+        ''', (producto_id,))
+        conn.commit()
+    except sqlite3.Error as e:
+        print(f"Error al eliminar el producto: {e}")
+    finally:
+        conn.close()
+
+# Ejemplo de uso
+eliminar_producto(1)
+
+
+
+
+
+
+
+
+
